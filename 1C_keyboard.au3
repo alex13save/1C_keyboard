@@ -6,7 +6,10 @@
  AutoIt Version: 3.3.14.5
  Author:         Alex Perfilev
 
+ Script Version: 1.0.0.2
+
  Script Function:
+
 	• Ввод специальных символов в редакторе конфигуратора 1С в русской раскладке клавиатуры
 	• Ввод шаблонных конструкций языка 1С
 
@@ -14,7 +17,19 @@
 
 	Alt+н - "Неопределено"
 	Alt+з - новый Запрос ...
-	Alt+с - "Сообщить"
+	Alt+с - "Сообщить()"
+	Alt+д - "Для каждого..."
+	Alt+в - "Возврат"
+
+	Alt+3 - "#"
+	Alt+7 - "&"
+	Alt+\ - "|"
+	Alt+х - "["
+	Alt+ъ - "]"
+	Alt+э - "'"
+	Alt+б - "<"
+	Alt+ю - ">"
+	Alt+ё - "~"
 
 #ce ----------------------------------------------------------------------------
 
@@ -23,20 +38,20 @@
 Opt("SendKeyDelay",5) ;10 def
 
 HotKeySet("!н","f001")	; Alt+н - "Неопределено"
-HotKeySet("!з","f002")	; Alt+з - новый Запрос
-HotKeySet("!с","f003")	; Alt+с - "Сообщить"
-HotKeySet("!д","f004")	; Alt+д - "Для каждого"
+HotKeySet("!з","f002")	; Alt+з - новый Запрос...
+HotKeySet("!с","f003")	; Alt+с - "Сообщить()"
+HotKeySet("!д","f004")	; Alt+д - "Для каждого..."
 HotKeySet("!в","f005")	; Alt+в - "Возврат"
 
 HotKeySet("!3","f006")	; Alt+3 - "#"
-HotKeySet("!7","f007")	; Alt+3 - "&"
+HotKeySet("!7","f007")	; Alt+7 - "&"
 HotKeySet("!\","f008")	; Alt+\ - "|"
 HotKeySet("!х","f009")	; Alt+х - "["
 HotKeySet("!ъ","f010")	; Alt+ъ - "]"
 HotKeySet("!э","f011")	; Alt+э - "'"
 HotKeySet("!б","f012")	; Alt+б - "<"
 HotKeySet("!ю","f013")	; Alt+ю - ">"
-
+HotKeySet("!ё","f014")	; Alt+ё - "~"
 
 While 1
 	Sleep(10)
@@ -121,6 +136,11 @@ EndFunc
 Func f013()
 	Sleep(250)
 	_SendEx(">")
+EndFunc
+
+Func f014()
+	Sleep(250)
+	_SendEx("~")
 EndFunc
 
 
