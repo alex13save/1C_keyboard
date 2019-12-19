@@ -25,6 +25,18 @@ Opt("SendKeyDelay",5) ;10 def
 HotKeySet("!н","f001")	; Alt+н - "Неопределено"
 HotKeySet("!з","f002")	; Alt+з - новый Запрос
 HotKeySet("!с","f003")	; Alt+с - "Сообщить"
+HotKeySet("!д","f004")	; Alt+д - "Для каждого"
+HotKeySet("!в","f005")	; Alt+в - "Возврат"
+
+HotKeySet("!3","f006")	; Alt+3 - "#"
+HotKeySet("!7","f007")	; Alt+3 - "&"
+HotKeySet("!\","f008")	; Alt+\ - "|"
+HotKeySet("!х","f009")	; Alt+х - "["
+HotKeySet("!ъ","f010")	; Alt+ъ - "]"
+HotKeySet("!э","f011")	; Alt+э - "'"
+HotKeySet("!б","f012")	; Alt+б - "<"
+HotKeySet("!ю","f013")	; Alt+ю - ">"
+
 
 While 1
 	Sleep(10)
@@ -58,6 +70,59 @@ Func f003()
 	_SendEx("Сообщить("""");")
 	Send("{LEFT 3}")
 EndFunc
+
+Func f004()
+	Sleep(250)
+	Send("Для каждого Стр Из  Цикл" & @CRLF & @CRLF)
+	Send("{LEFT}" & "КонецЦикла;")
+	Send("{UP 2}{END}{LEFT 5}")
+EndFunc
+
+Func f005()
+	Sleep(250)
+	_SendEx("Возврат")
+EndFunc
+
+Func f006()
+	Sleep(250)
+	_SendEx("#")
+EndFunc
+
+Func f007()
+	Sleep(250)
+	_SendEx("&")
+EndFunc
+
+Func f008()
+	Sleep(250)
+	_SendEx("|")
+EndFunc
+
+Func f009()
+	Sleep(250)
+	_SendEx("[")
+EndFunc
+
+Func f010()
+	Sleep(250)
+	_SendEx("]")
+EndFunc
+
+Func f011()
+	Sleep(250)
+	_SendEx("'")
+EndFunc
+
+Func f012()
+	Sleep(250)
+	_SendEx("<")
+EndFunc
+
+Func f013()
+	Sleep(250)
+	_SendEx(">")
+EndFunc
+
 
 ; --------------------------------------------------------------
 
